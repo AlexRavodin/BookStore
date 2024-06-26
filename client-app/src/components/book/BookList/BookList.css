@@ -1,0 +1,23 @@
+﻿.book-list {
+    margin: 10px auto 0;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.book-list th, .book-list td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    height: 30px;
+    word-break: break-all; /* Add this to wrap long text */
+    overflow-wrap: break-word; /* Add this to wrap long text */
+}
+
+.book-list th {
+    background-color: #f0f0f0;
+}
+
+.book-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

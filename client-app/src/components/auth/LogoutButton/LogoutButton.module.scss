@@ -1,0 +1,12 @@
+.LogoutButton {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-weight: normal;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: transparent;
+    color: #ccc;
+  }
+}

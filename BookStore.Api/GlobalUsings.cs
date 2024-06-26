@@ -1,0 +1,1 @@
+﻿global using Book = BookStore.Api.Models.Books.Entity.Book;

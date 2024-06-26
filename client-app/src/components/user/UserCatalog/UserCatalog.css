@@ -1,0 +1,23 @@
+.user-catalog {
+  margin: 10px auto 0;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.user-catalog th, .user-catalog td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  height: 30px;
+  word-break: break-all; /* Add this to wrap long text */
+  overflow-wrap: break-word; /* Add this to wrap long text */
+}
+
+.user-catalog th {
+  background-color: #f0f0f0;
+}
+
+.user-catalog tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
