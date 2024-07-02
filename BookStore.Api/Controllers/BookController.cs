@@ -9,7 +9,7 @@ namespace BookStore.Api.Controllers;
 
 [ApiController]
 [Route("api/books")]
-[Authorize(Policy = Constants.Customer)]
+[Authorize]
 public class BookController : ControllerBase
 {
     private readonly IBookService _bookService;
@@ -20,6 +20,7 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Policy = Constants.Customer)]
     public async Task<IActionResult> Get([FromQuery] BookParameters parameters)
     {
         if (!ModelState.IsValid)
@@ -39,8 +40,10 @@ public class BookController : ControllerBase
         return Ok(pagedBooks);
     }
 
+    
     [Route("{id:int}")]
     [HttpGet]
+    [Authorize(Policy = Constants.Customer)]
     public async Task<IActionResult> Get(int id)
     {
         var book = await _bookService.GetBookById(id);
@@ -49,6 +52,7 @@ public class BookController : ControllerBase
     }
     
     [HttpPut]
+    [Authorize(Policy = Constants.Moderator)]
     public async Task<IActionResult> Update(UpdateBookRequest updateBookRequest)
     {
         var book = await _bookService.UpdateBook(updateBookRequest);
@@ -58,6 +62,7 @@ public class BookController : ControllerBase
 
     [Route("{id:int}")]
     [HttpDelete]
+    [Authorize(Policy = Constants.Moderator)]
     public async Task<IActionResult> Delete(int id)
     {
         await _bookService.DeleteBook(id);

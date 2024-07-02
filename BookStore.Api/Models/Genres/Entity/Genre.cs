@@ -1,4 +1,4 @@
-﻿namespace BookStore.Api.Models.Books.Entity;
+﻿namespace BookStore.Api.Models.Genres.Entity;
 
 public class Genre
 {
@@ -8,5 +8,5 @@ public class Genre
     
     public string Description { get; set; }
     
-    public ICollection<Books.Entity.Book> Books { get; set; }
+    public ICollection<Book> Books { get; set; }
 }

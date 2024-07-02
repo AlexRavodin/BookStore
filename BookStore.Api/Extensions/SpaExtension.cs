@@ -11,6 +11,7 @@ public static class SpaExtension
         app.UseMiddleware<RequestContextLoggingMiddleware>();
 
         //app.UseCors(Constants.CorsPolicy);
+        app.UseStaticFiles();
         app.UseExceptionHandler("/error");
         app.UseRouting();
 

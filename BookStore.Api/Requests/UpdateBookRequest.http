@@ -1,0 +1,14 @@
+﻿### Post request to test endpoint
+POST http://localhost:5103/api/test
+Content-Type: application/json
+
+{
+  "name": "Test Book",
+  "summary" : "Interesting",
+  "price": 100,
+  "qualityDescription" : "Good"
+}
+
+###
+
+

@@ -18,7 +18,8 @@ public class BookRepository : IBookRepository
     {
         var books = ApplyAllParameters(_context.Books, parameters);
         
-        return await books.Include(b => b.Genre)
+        return await books.Include(b => b.Genres)
+            .Include(b => b.BookImage)
             .Skip((parameters.PageIndex - 1) * parameters.PageSize)
             .Take(parameters.PageSize)
             .ToListAsync();
@@ -34,7 +35,8 @@ public class BookRepository : IBookRepository
     public async Task<Book> GetById(int id)
     {
         var book = await _context.Books
-            .Include(b => b.Genre)
+            .Include(b => b.BookImage)
+            .Include(b => b.Genres)
             .Include(b => b.Authors).
             FirstOrDefaultAsync(b => b.Id == id);
 

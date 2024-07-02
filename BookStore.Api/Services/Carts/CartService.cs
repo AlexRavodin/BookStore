@@ -71,8 +71,39 @@ public class CartService : ICartService
         return cart.Id;
     }
 
-    public Task<Cart> UpdateCart(UpdateCartItemCountRequest updateCartItemCountRequest)
+    public async Task<CartDetails> UpdateCart(UpdateCartItemCountRequest updateCartItemCountRequest)
     {
-        throw new NotImplementedException();
+        var cart = await _context.Carts.FirstOrDefaultAsync(c => c.UserId == updateCartItemCountRequest.UserId);
+
+        if (cart is null)
+        {
+            throw new DataException("No cart exists.");
+        }
+
+        var cartItem =
+            await _context.CartItems.FirstOrDefaultAsync(ci =>
+                ci.CartId == cart.Id && ci.BookId == updateCartItemCountRequest.BookId);
+
+        if (cartItem is null)
+        {
+            throw new DataException("Book in cart not exists.");
+        }
+
+        if (updateCartItemCountRequest.NewCount == 0)
+        {
+            _context.CartItems.Remove(cartItem);
+        }
+        else
+        {
+            cartItem.Count = updateCartItemCountRequest.NewCount;
+        }
+
+        await _context.SaveChangesAsync();
+        
+        var cartItems = await _context.CartItems.Where(ci => ci.CartId == cart.Id).Include(ci => ci.Book).Select(ci =>
+            new CartItemDto(
+                ci.BookId, ci.Book.Name, ci.Book.Price, ci.Count)).ToListAsync();
+
+        return new CartDetails(cart.Id, cart.UserId, cartItems);
     }
 }

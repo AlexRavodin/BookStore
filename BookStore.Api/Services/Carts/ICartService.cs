@@ -11,5 +11,5 @@ public interface ICartService
 
     public Task<int> AddToCart(AddToCartRequest addToCartRequest);
     
-    public Task<Cart> UpdateCart(UpdateCartItemCountRequest updateCartItemCountRequest);
+    public Task<CartDetails> UpdateCart(UpdateCartItemCountRequest updateCartItemCountRequest);
 }

@@ -1,4 +1,8 @@
-﻿namespace BookStore.Api.Models.Books.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using BookStore.Api.Models.Genres.Entity;
+using BookStore.Api.Models.Images.Entity;
+
+namespace BookStore.Api.Models.Books.Entity;
 
 public class Book
 {
@@ -14,7 +18,11 @@ public class Book
     
     public int GenreId { get; set; }
     
-    public Genre Genre { get; set; }
+    public ICollection<Genre> Genres { get; set; }
     
     public ICollection<Author> Authors { get; set; }
+    
+    public Guid? BookImageId { get; set; }
+    
+    public BookImage? BookImage { get; set; }
 }

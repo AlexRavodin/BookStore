@@ -4,10 +4,12 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace BookStore.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class AddBookAndUsersTables : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -66,7 +68,38 @@ namespace BookStore.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Genre",
+                name: "Books",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Summary = table.Column<string>(type: "text", nullable: false),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false),
+                    QualityDescription = table.Column<string>(type: "text", nullable: false),
+                    GenreId = table.Column<int>(type: "integer", nullable: false),
+                    BookImageId = table.Column<Guid>(type: "uuid", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Books", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Carts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Genres",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -76,7 +109,20 @@ namespace BookStore.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Genre", x => x.Id);
+                    table.PrimaryKey("PK_Genres", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserImages",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Extension = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserImages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -186,51 +232,179 @@ namespace BookStore.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Books",
+                name: "BookAuthor",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Summary = table.Column<string>(type: "text", nullable: false),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    QualityDescription = table.Column<string>(type: "text", nullable: false),
-                    GenreId = table.Column<int>(type: "integer", nullable: false)
+                    BookId = table.Column<int>(type: "integer", nullable: false),
+                    AuthorId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.Id);
+                    table.PrimaryKey("PK_BookAuthor", x => new { x.BookId, x.AuthorId });
                     table.ForeignKey(
-                        name: "FK_Books_Genre_GenreId",
-                        column: x => x.GenreId,
-                        principalTable: "Genre",
+                        name: "FK_BookAuthor_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookAuthor_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "AuthorBook",
+                name: "BookImages",
                 columns: table => new
                 {
-                    AuthorsId = table.Column<int>(type: "integer", nullable: false),
-                    BooksId = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    BookId = table.Column<int>(type: "integer", nullable: false),
+                    Extension = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AuthorBook", x => new { x.AuthorsId, x.BooksId });
+                    table.PrimaryKey("PK_BookImages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AuthorBook_Authors_AuthorsId",
-                        column: x => x.AuthorsId,
-                        principalTable: "Authors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AuthorBook_Books_BooksId",
-                        column: x => x.BooksId,
+                        name: "FK_BookImages_Books_BookId",
+                        column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "CartItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Count = table.Column<int>(type: "integer", nullable: false),
+                    BookId = table.Column<int>(type: "integer", nullable: false),
+                    CartId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CartItems_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CartItems_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BookGenre",
+                columns: table => new
+                {
+                    BookId = table.Column<int>(type: "integer", nullable: false),
+                    GenreId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookGenre", x => new { x.BookId, x.GenreId });
+                    table.ForeignKey(
+                        name: "FK_BookGenre_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookGenre_Genres_GenreId",
+                        column: x => x.GenreId,
+                        principalTable: "Genres",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "FirstName", "LastName" },
+                values: new object[,]
+                {
+                    { 1, "Leo", "Tolstoy" },
+                    { 2, "Fyodor", "Dostoevsky" },
+                    { 3, "Mikhail", "Bulgakov" },
+                    { 4, "Jane", "Austen" },
+                    { 5, "J.R.R.", "Tolkien" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "BookImageId", "GenreId", "Name", "Price", "QualityDescription", "Summary" },
+                values: new object[,]
+                {
+                    { 1, null, 0, "War and Peace", 150.0m, "Excellent", "A historical novel that chronicles the tumultuous events in Russia during the Napoleonic Wars." },
+                    { 2, null, 0, "Anna Karenina", 120.0m, "Very Good", "A tragic story of love and infidelity in imperial Russia." },
+                    { 3, new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"), 0, "The Master and Margarita", 130.0m, "Good", "A fantastical story set in Soviet Russia that explores themes of good and evil." },
+                    { 4, null, 0, "Pride and Prejudice", 140.0m, "Excellent", "A romantic novel that explores the complexities of relationships in 19th-century England." },
+                    { 5, null, 0, "Crime and Punishment", 110.0m, "Very Good", "A psychological novel that delves into the mind of a young man who commits a heinous crime." },
+                    { 6, null, 0, "The Lord of the Rings", 160.0m, "Good", "A high fantasy novel that follows the quest to destroy the One Ring." },
+                    { 7, null, 0, "The Count of Monte Cristo", 130.0m, "Excellent", "An adventure novel that follows the story of betrayal, revenge, and redemption." },
+                    { 8, null, 0, "The Picture of Dorian Gray", 120.0m, "Very Good", "A philosophical novel that explores the themes of beauty, morality, and the supernatural." },
+                    { 9, null, 0, "The Hobbit", 150.0m, "Good", "A fantasy novel that follows the journey of Bilbo Baggins to reclaim the Lonely Mountain." },
+                    { 10, null, 0, "Wuthering Heights", 140.0m, "Excellent", "A romantic novel that explores the complex and often destructive nature of love." }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Genres",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "A genre of literature that reconstructs historical events.", "Historical Fiction" },
+                    { 2, "A book accepted as being exemplary or noteworthy.", "Classic" },
+                    { 3, "A genre of speculative fiction set in a fictional universe.", "Fantasy" },
+                    { 4, "A genre of literature that focuses on the romantic relationship between characters.", "Romance" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "BookAuthor",
+                columns: new[] { "AuthorId", "BookId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 2, 2 },
+                    { 3, 3 },
+                    { 4, 4 },
+                    { 2, 5 },
+                    { 5, 6 },
+                    { 1, 7 },
+                    { 2, 8 },
+                    { 5, 9 },
+                    { 4, 10 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "BookGenre",
+                columns: new[] { "BookId", "GenreId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 1 },
+                    { 2, 2 },
+                    { 3, 3 },
+                    { 4, 4 },
+                    { 5, 2 },
+                    { 6, 3 },
+                    { 7, 2 },
+                    { 8, 2 },
+                    { 9, 3 },
+                    { 10, 4 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "BookImages",
+                columns: new[] { "Id", "BookId", "Extension" },
+                values: new object[] { new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"), 3, ".webp" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -270,14 +444,30 @@ namespace BookStore.Api.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AuthorBook_BooksId",
-                table: "AuthorBook",
-                column: "BooksId");
+                name: "IX_BookAuthor_AuthorId",
+                table: "BookAuthor",
+                column: "AuthorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_GenreId",
-                table: "Books",
+                name: "IX_BookGenre_GenreId",
+                table: "BookGenre",
                 column: "GenreId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookImages_BookId",
+                table: "BookImages",
+                column: "BookId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartItems_BookId",
+                table: "CartItems",
+                column: "BookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartItems_CartId",
+                table: "CartItems",
+                column: "CartId");
         }
 
         /// <inheritdoc />
@@ -299,7 +489,19 @@ namespace BookStore.Api.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "AuthorBook");
+                name: "BookAuthor");
+
+            migrationBuilder.DropTable(
+                name: "BookGenre");
+
+            migrationBuilder.DropTable(
+                name: "BookImages");
+
+            migrationBuilder.DropTable(
+                name: "CartItems");
+
+            migrationBuilder.DropTable(
+                name: "UserImages");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -311,10 +513,13 @@ namespace BookStore.Api.Migrations
                 name: "Authors");
 
             migrationBuilder.DropTable(
+                name: "Genres");
+
+            migrationBuilder.DropTable(
                 name: "Books");
 
             migrationBuilder.DropTable(
-                name: "Genre");
+                name: "Carts");
         }
     }
 }

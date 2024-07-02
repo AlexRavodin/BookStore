@@ -114,3 +114,8 @@ C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\Ser
 C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\obj\Debug\net8.0\BookStore.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alex\Desktop\test\TestWebApp\TestApp\BookStore.Api\bin\Debug\net8.0\BookStore.Api.staticwebassets.runtime.json

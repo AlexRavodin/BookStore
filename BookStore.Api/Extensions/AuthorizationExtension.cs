@@ -8,7 +8,7 @@ public static class AuthorizationExtension
     {
         builder.Services.AddAuthorizationBuilder()
             .AddPolicy(Constants.Customer, pb =>
-                pb.RequireClaim(Constants.ClaimTypeName, Constants.Customer))
+                pb.RequireClaim(Constants.ClaimTypeName, Constants.Customer, Constants.Moderator))
             .AddPolicy(Constants.Moderator, pb =>
                 pb.RequireClaim(Constants.ClaimTypeName, Constants.Moderator))
             .AddPolicy(Constants.Admin, pb =>

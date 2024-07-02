@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NJ+XrPsIgvmN8F8AwseZP7lTyQ2i4Iz00pwT3khqlEB862w2uxnvy2w1XEI9aFA3pDxlhAmlKKH/Qp02d67G6Q==",
+  "dgSpecHash": "uKEa8uMKFexxDlB1x9PtfiGAOche6nYdTC2bJbBbqu0uZJXx/Em7F6PUtuflquKnMigxFpr9Bkd0ngjaq9PzsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\BookStore.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alex\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\alex\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\alex\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.6\\microsoft.aspnetcore.cryptography.internal.8.0.6.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.6\\microsoft.aspnetcore.cryptography.keyderivation.8.0.6.nupkg.sha512",

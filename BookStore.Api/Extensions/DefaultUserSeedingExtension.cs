@@ -42,7 +42,7 @@ public static class DefaultUserSeedingExtension
         if (!userManager.Users.Any(u => u.UserName == "1"))
         {
             var basicAdmin = new IdentityUser { UserName = "1" };
-
+            
             userManager.CreateAsync(basicAdmin, "1").GetAwaiter().GetResult();
             userManager.AddClaimAsync(basicAdmin, new Claim(Constants.ClaimTypeName, Constants.Admin)).GetAwaiter()
                 .GetResult();
@@ -54,6 +54,15 @@ public static class DefaultUserSeedingExtension
 
             userManager.CreateAsync(basicCustomer, "2").GetAwaiter().GetResult();
             userManager.AddClaimAsync(basicCustomer, new Claim(Constants.ClaimTypeName, Constants.Customer)).GetAwaiter()
+                .GetResult();
+        }
+        
+        if (!userManager.Users.Any(u => u.UserName == "3"))
+        {
+            var basicCustomer = new IdentityUser { UserName = "3" };
+
+            userManager.CreateAsync(basicCustomer, "3").GetAwaiter().GetResult();
+            userManager.AddClaimAsync(basicCustomer, new Claim(Constants.ClaimTypeName, Constants.Moderator)).GetAwaiter()
                 .GetResult();
         }
 

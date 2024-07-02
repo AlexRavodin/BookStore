@@ -94,6 +94,78 @@ namespace BookStore.Api.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BookGenre", b =>
+                {
+                    b.Property<int>("BookId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("BookId", "GenreId");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("BookGenre");
+
+                    b.HasData(
+                        new
+                        {
+                            BookId = 1,
+                            GenreId = 1
+                        },
+                        new
+                        {
+                            BookId = 2,
+                            GenreId = 1
+                        },
+                        new
+                        {
+                            BookId = 2,
+                            GenreId = 2
+                        },
+                        new
+                        {
+                            BookId = 3,
+                            GenreId = 3
+                        },
+                        new
+                        {
+                            BookId = 4,
+                            GenreId = 4
+                        },
+                        new
+                        {
+                            BookId = 5,
+                            GenreId = 2
+                        },
+                        new
+                        {
+                            BookId = 6,
+                            GenreId = 3
+                        },
+                        new
+                        {
+                            BookId = 7,
+                            GenreId = 2
+                        },
+                        new
+                        {
+                            BookId = 8,
+                            GenreId = 2
+                        },
+                        new
+                        {
+                            BookId = 9,
+                            GenreId = 3
+                        },
+                        new
+                        {
+                            BookId = 10,
+                            GenreId = 4
+                        });
+                });
+
             modelBuilder.Entity("BookStore.Api.Models.Books.Entity.Author", b =>
                 {
                     b.Property<int>("Id")
@@ -155,6 +227,9 @@ namespace BookStore.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<Guid?>("BookImageId")
+                        .HasColumnType("uuid");
+
                     b.Property<int>("GenreId")
                         .HasColumnType("integer");
 
@@ -175,15 +250,13 @@ namespace BookStore.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenreId");
-
                     b.ToTable("Books");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            GenreId = 1,
+                            GenreId = 0,
                             Name = "War and Peace",
                             Price = 150.0m,
                             QualityDescription = "Excellent",
@@ -192,7 +265,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 2,
-                            GenreId = 2,
+                            GenreId = 0,
                             Name = "Anna Karenina",
                             Price = 120.0m,
                             QualityDescription = "Very Good",
@@ -201,7 +274,8 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 3,
-                            GenreId = 3,
+                            BookImageId = new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"),
+                            GenreId = 0,
                             Name = "The Master and Margarita",
                             Price = 130.0m,
                             QualityDescription = "Good",
@@ -210,7 +284,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 4,
-                            GenreId = 4,
+                            GenreId = 0,
                             Name = "Pride and Prejudice",
                             Price = 140.0m,
                             QualityDescription = "Excellent",
@@ -219,7 +293,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 5,
-                            GenreId = 2,
+                            GenreId = 0,
                             Name = "Crime and Punishment",
                             Price = 110.0m,
                             QualityDescription = "Very Good",
@@ -228,7 +302,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 6,
-                            GenreId = 3,
+                            GenreId = 0,
                             Name = "The Lord of the Rings",
                             Price = 160.0m,
                             QualityDescription = "Good",
@@ -237,7 +311,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 7,
-                            GenreId = 1,
+                            GenreId = 0,
                             Name = "The Count of Monte Cristo",
                             Price = 130.0m,
                             QualityDescription = "Excellent",
@@ -246,7 +320,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 8,
-                            GenreId = 2,
+                            GenreId = 0,
                             Name = "The Picture of Dorian Gray",
                             Price = 120.0m,
                             QualityDescription = "Very Good",
@@ -255,7 +329,7 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 9,
-                            GenreId = 3,
+                            GenreId = 0,
                             Name = "The Hobbit",
                             Price = 150.0m,
                             QualityDescription = "Good",
@@ -264,58 +338,11 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 10,
-                            GenreId = 4,
+                            GenreId = 0,
                             Name = "Wuthering Heights",
                             Price = 140.0m,
                             QualityDescription = "Excellent",
                             Summary = "A romantic novel that explores the complex and often destructive nature of love."
-                        });
-                });
-
-            modelBuilder.Entity("BookStore.Api.Models.Books.Entity.Genre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genre");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "A genre of literature that reconstructs historical events.",
-                            Name = "Historical Fiction"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "A book accepted as being exemplary or noteworthy.",
-                            Name = "Classic"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "A genre of speculative fiction set in a fictional universe.",
-                            Name = "Fantasy"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "A genre of literature that focuses on the romantic relationship between characters.",
-                            Name = "Romance"
                         });
                 });
 
@@ -359,6 +386,100 @@ namespace BookStore.Api.Migrations
                     b.HasIndex("CartId");
 
                     b.ToTable("CartItems");
+                });
+
+            modelBuilder.Entity("BookStore.Api.Models.Genres.Entity.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "A genre of literature that reconstructs historical events.",
+                            Name = "Historical Fiction"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "A book accepted as being exemplary or noteworthy.",
+                            Name = "Classic"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "A genre of speculative fiction set in a fictional universe.",
+                            Name = "Fantasy"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "A genre of literature that focuses on the romantic relationship between characters.",
+                            Name = "Romance"
+                        });
+                });
+
+            modelBuilder.Entity("BookStore.Api.Models.Images.Entity.BookImage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Extension")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId")
+                        .IsUnique();
+
+                    b.ToTable("BookImages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"),
+                            BookId = 3,
+                            Extension = ".webp"
+                        });
+                });
+
+            modelBuilder.Entity("BookStore.Api.Models.Images.Entity.UserImage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Extension")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserImages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -572,15 +693,19 @@ namespace BookStore.Api.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BookStore.Api.Models.Books.Entity.Book", b =>
+            modelBuilder.Entity("BookGenre", b =>
                 {
-                    b.HasOne("BookStore.Api.Models.Books.Entity.Genre", "Genre")
-                        .WithMany("Books")
-                        .HasForeignKey("GenreId")
+                    b.HasOne("BookStore.Api.Models.Books.Entity.Book", null)
+                        .WithMany()
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Genre");
+                    b.HasOne("BookStore.Api.Models.Genres.Entity.Genre", null)
+                        .WithMany()
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BookStore.Api.Models.Carts.Entity.CartItem", b =>
@@ -592,7 +717,7 @@ namespace BookStore.Api.Migrations
                         .IsRequired();
 
                     b.HasOne("BookStore.Api.Models.Carts.Entity.Cart", "Cart")
-                        .WithMany()
+                        .WithMany("CartItems")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -600,6 +725,17 @@ namespace BookStore.Api.Migrations
                     b.Navigation("Book");
 
                     b.Navigation("Cart");
+                });
+
+            modelBuilder.Entity("BookStore.Api.Models.Images.Entity.BookImage", b =>
+                {
+                    b.HasOne("BookStore.Api.Models.Books.Entity.Book", "Book")
+                        .WithOne("BookImage")
+                        .HasForeignKey("BookStore.Api.Models.Images.Entity.BookImage", "BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -653,9 +789,14 @@ namespace BookStore.Api.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BookStore.Api.Models.Books.Entity.Genre", b =>
+            modelBuilder.Entity("BookStore.Api.Models.Books.Entity.Book", b =>
                 {
-                    b.Navigation("Books");
+                    b.Navigation("BookImage");
+                });
+
+            modelBuilder.Entity("BookStore.Api.Models.Carts.Entity.Cart", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 #pragma warning restore 612, 618
         }
