@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './BookList.css';
+import {string} from "prop-types";
 
 const BookList = ({ books }) => {
     const [loading, setLoading] = useState(false);
@@ -25,19 +26,23 @@ const BookList = ({ books }) => {
         <table className="book-list">
             <thead>
             <tr>
+                <th></th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Genre</th>
+                <th>Genres</th>
                 <th>Actions</th>
-                <th>Add to Cart</th> {/* New column */}
+                <th>Add to Cart</th>
             </tr>
             </thead>
             <tbody>
             {books.map((book) => (
                 <tr key={book.id}>
+                    <td>
+                        <img src={book.imagePath} width="80" height="120" alt={book.name}/>
+                    </td>
                     <td>{book.name}</td>
                     <td>${book.price}</td>
-                    <td>{book.genreName}</td>
+                    <td>{book.genres.map(g => g.name).join(", ")}</td>
                     <td>
                         <Link to={`/book/${book.id}`}>
                             <button>Details</button>

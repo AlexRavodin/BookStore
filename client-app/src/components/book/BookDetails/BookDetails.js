@@ -12,78 +12,48 @@ const BookDetails = () => {
         axios.get(`http://localhost:5103/api/books/${id}`)
             .then(response => {
                 setBook(response.data);
+                console.log(book.genres);
             })
             .catch(error => {
                 console.error(error);
             });
     }, [id]);
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setBook({ ...book, [name]: value });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const updateBookRequest = {
-            Id: book.id,
-            Name: book.name,
-            Summary: book.summary,
-            Price: book.price,
-            QualityDescription: book.qualityDescription,
-        };
-        axios.put(`http://localhost:5103/api/books`, updateBookRequest)
-            .then(response => {
-                console.log("Book updated successfully!");
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    };
-
-    const handleDeleteBook = () => {
-        axios.delete(`http://localhost:5103/api/books/${id}`)
-            .then(response => {
-                console.log("Book deleted successfully!");
-                // You can also redirect the user to a different page or update the UI here
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    };
+    useEffect(() => {
+        if (book.genres) {
+            console.log(book.genres.map(g => g.name).join(", "));
+        }
+    }, [book]);
 
     return (
         <div className={styles.bookDetails}>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" name="name" value={book.name} onChange={handleInputChange}/>
-                </label>
-                <br/>
-                <label>
-                    Summary:
-                    <textarea name="summary" value={book.summary} onChange={handleInputChange}/>
-                </label>
-                <br/>
-                <label>
-                    Price:
-                    <input type="number" name="price" value={book.price} onChange={handleInputChange}/>
-                </label>
-                <br/>
-                <label>
-                    Genre:
-                    <input type="text" name="genreName" value={book.genreName} onChange={handleInputChange}/>
-                </label>
-                <br/>
-                <label>
-                    Quality:
-                    <input type="text" name="qualityDescription" value={book.qualityDescription}
-                           onChange={handleInputChange}/>
-                </label>
-                <br/>
-                <button type="submit">Save Changes</button>
-                <button type="button" onClick={handleDeleteBook}>Delete</button>
-            </form>
+            <div className={styles.imageContainer}>
+                <img src={`${process.env.PUBLIC_URL}/${book.imagePath}`} alt={book.name} width="300" height="550" className={styles.bookImage} />
+            </div>
+            <div className={styles.formContainer}>
+                <form>
+                    <label>
+                        Name:
+                        <input type="text" name="name" value={book.name} disabled={true}/>
+                    </label>
+                    <br/>
+                    <label>
+                        Summary:
+                        <textarea name="summary" value={book.summary} disabled={true}/>
+                    </label>
+                    <br/>
+                    <label>
+                        Price:
+                        <input type="number" name="price" value={book.price} disabled={true}/>
+                    </label>
+                    <br/>
+                    <label>
+                        Genre:
+                        <input type="text" name="genreName" value={book.genres.map(g => g.name).join(", ")} disabled={true}/>
+                    </label>
+                    <br/>
+                </form>
+            </div>
         </div>
     );
 };

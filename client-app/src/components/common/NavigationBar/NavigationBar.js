@@ -5,7 +5,7 @@ import styles from './NavigationBar.module.scss';
 import LogoutButton from "../../auth/LogoutButton/LogoutButton";
 
 const NavigationBar = () => {
-    const {user, logout} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     return (
         <nav className={styles.NavigationBar}>
@@ -29,16 +29,27 @@ const NavigationBar = () => {
                         </ul>
                     ) : user && user.isLoggedIn && user.claim === "admin" ? (
                         <Link to="/users" className={styles.navLink}>
-                        Users
+                            Users
                         </Link>
-                    ) : null}
+                    ) : user && user.isLoggedIn && user.claim === "moderator" ?
+                        (<Link to="/books/manager" className={styles.navLink}>
+                        Books
+                    </Link>) : null }
                 </li>
                 <li>
                     {user && user.isLoggedIn ? (
-                        <LogoutButton>
-                            Logout
-                        </LogoutButton>
-
+                        <ul>
+                            <li>
+                                <Link to="/user" className={styles.navLink}>
+                                    Profile
+                                </Link>
+                            </li>
+                            <li>
+                                <LogoutButton>
+                                    Logout
+                                </LogoutButton>
+                            </li>
+                        </ul>
                     ) : (
                         <ul>
                             <li>

@@ -1,0 +1,11 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "Summary": [
+      "'Summary' должно быть длиной от 0 до 5 символов. Количество введенных символов: 11."
+    ]
+  },
+  "traceId": "00-c841fab07da7c67cdeb3a148d900430a-db44e99a713ad0b6-00"
+}

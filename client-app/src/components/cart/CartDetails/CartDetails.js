@@ -32,6 +32,25 @@ const CartDetails = () => {
         });
     }, []);
 
+    const handleUpdateCount = async (bookId, newCount) => {
+
+        console.log(bookId);
+        console.log(newCount);
+
+        try {
+            const response = await axios.post('http://localhost:5103/api/cart/change-count', {
+                bookId,
+                newCount,
+            }, {
+                withCredentials: true,
+            });
+
+            setCart(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -61,6 +80,8 @@ const CartDetails = () => {
                         <div className={styles.gridCell}>
                             <span>Count:</span>
                             <span>{item.count}</span>
+                            <button onClick={() => handleUpdateCount(item.bookId, item.count + 1)}>+</button>
+                            <button onClick={() => handleUpdateCount(item.bookId, item.count - 1)}>-</button>
                         </div>
                     </div>
                 ))}

@@ -19,14 +19,6 @@ const FilterForm = ({ parameters, setParameters }) => {
         <form className="filter-form">
             <h2>Filter Options</h2>
             <div className="filter-group">
-                <label>Page Size:</label>
-                <input type="number" name="PageSize" value={parameters.PageSize} onChange={handleFilterChange} />
-            </div>
-            <div className="filter-group">
-                <label>Page Index:</label>
-                <input type="number" name="PageIndex" value={parameters.PageIndex} onChange={handleFilterChange} />
-            </div>
-            <div className="filter-group">
                 <label>Minimal Price:</label>
                 <input type="number" name="MinimalPrice" value={parameters.MinimalPrice} onChange={handleFilterChange} />
             </div>

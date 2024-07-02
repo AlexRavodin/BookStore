@@ -1,54 +1,48 @@
-.UserDetails {
+.userDetails {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #fff;
   border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.title {
-  margin-top: 0;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.profileImage {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+label {
+  display: block;
+  margin-bottom: 20px;
 }
 
-.list li {
+input[type="text"] {
+  width: 100%;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.list li:last-child {
-  border-bottom: none;
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.label {
-  font-weight: bold;
-  margin-right: 10px;
+button[type="button"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.roleContainer {
-  margin-top: 10px;
-}
-
-.logoutButton {
-  margin-top: 20px;
-}
-
-.loading {
-  text-align: center;
-  padding: 20px;
-}
-
-.notFound {
-  text-align: center;
-  padding: 20px;
-  color: red;
+button[type="button"]:hover {
+  background-color: #3e8e41;
 }

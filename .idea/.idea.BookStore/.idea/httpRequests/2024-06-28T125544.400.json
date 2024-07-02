@@ -1,0 +1,11 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "Summary": [
+      "The Summary field is required."
+    ]
+  },
+  "traceId": "00-af034de0ab9a15242808c9785700f64f-83561ef9cb9a209d-00"
+}

@@ -1,0 +1,23 @@
+.ManagerBookCatalogContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ManagerBookCatalogInnerContainer {
+  display: flex;
+}
+
+.filterFormContainer {
+  flex-basis: 30%;
+  justify-content: flex-start;
+}
+
+.bookListContainer {
+  flex-basis: 70%;
+  overflow-y: auto;
+}
+
+.paginationBarContainer {
+  width: 100%; /* take full width */
+  margin-top: 20px;
+}
