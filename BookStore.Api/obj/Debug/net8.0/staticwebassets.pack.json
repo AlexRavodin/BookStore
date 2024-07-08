@@ -1,28 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\wwwroot\\images\\books\\0f8fad5b-d9cb-469f-a165-70867728950e.webp",
-      "PackagePath": "staticwebassets\\images\\books\\0f8fad5b-d9cb-469f-a165-70867728950e.webp"
-    },
-    {
-      "Id": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\wwwroot\\images\\books\\52746d4e-9297-475d-8ca0-a648cce9fb93.webp",
-      "PackagePath": "staticwebassets\\images\\books\\52746d4e-9297-475d-8ca0-a648cce9fb93.webp"
-    },
-    {
-      "Id": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\wwwroot\\images\\books\\7ccaebc3-f700-4f6d-a07f-7171872c2af7.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\7ccaebc3-f700-4f6d-a07f-7171872c2af7.jpg"
-    },
-    {
       "Id": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\wwwroot\\images\\books\\NoImageAvailable.jpg",
       "PackagePath": "staticwebassets\\images\\books\\NoImageAvailable.jpg"
     },
     {
       "Id": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\wwwroot\\images\\users\\NoImageAvailable.jpg",
       "PackagePath": "staticwebassets\\images\\users\\NoImageAvailable.jpg"
-    },
-    {
-      "Id": "C:\\Users\\alex\\Desktop\\test\\TestWebApp\\TestApp\\BookStore.Api\\wwwroot\\images\\users\\eca7d1c0-7498-48da-81c5-63fdf9c0592c.jpeg",
-      "PackagePath": "staticwebassets\\images\\users\\eca7d1c0-7498-48da-81c5-63fdf9c0592c.jpeg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BookStore.Api.Microsoft.AspNetCore.StaticWebAssets.props",

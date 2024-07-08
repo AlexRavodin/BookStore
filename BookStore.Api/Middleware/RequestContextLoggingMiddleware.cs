@@ -6,7 +6,6 @@ namespace BookStore.Api.Middleware;
 
 public class RequestContextLoggingMiddleware
 {
-    private const string CorrelationIdHeaderName = "X-Correlation-Id";
     private readonly RequestDelegate _next;
 
     public RequestContextLoggingMiddleware(RequestDelegate next)
@@ -27,7 +26,7 @@ public class RequestContextLoggingMiddleware
     private static string GetCorrelationId(HttpContext context)
     {
         context.Request.Headers.TryGetValue(
-            CorrelationIdHeaderName, out StringValues correlationId);
+            Constants.CorrelationLogIdProperty, out StringValues correlationId);
 
         return correlationId.FirstOrDefault() ?? context.TraceIdentifier;
     }

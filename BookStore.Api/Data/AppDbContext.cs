@@ -34,7 +34,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) :
             .WithOne(bi => bi.Book)
             .HasForeignKey<BookImage>(bi => bi.BookId);
         
-        var imageGuid = Guid.Parse("0f8fad5b-d9cb-469f-a165-70867728950e");
+        // TODO: seed normal images
+        /*var imageGuid = Guid.Parse("0f8fad5b-d9cb-469f-a165-70867728950e");
 
         modelBuilder.Entity<BookImage>().HasData(
             new BookImage
@@ -43,7 +44,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) :
                 BookId = 3,
                 Extension = ".webp",
             }
-        );
+        );*/
 
         modelBuilder.Entity<Genre>().HasData(
             new Genre
@@ -91,7 +92,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) :
                 Summary = "A fantastical story set in Soviet Russia that explores themes of good and evil.",
                 Price = 130.0m,
                 QualityDescription = "Good",
-                BookImageId = imageGuid,
+                //BookImageId = imageGuid, TODO: seed image
             },
             new Book
             {

@@ -2,6 +2,7 @@
 using BookStore.Api.Helpers;
 using BookStore.Api.Services.Images;
 using BookStore.Api.Validation.Image;
+using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,19 +14,24 @@ namespace BookStore.Api.Controllers;
 public class ImageController : ControllerBase
 {
     private readonly IImageService _imageService;
+    
+    private IValidator<IFormFile> _validator;
 
-    public ImageController(IImageService imageService)
+    public ImageController(IImageService imageService, IValidator<IFormFile> validator)
     {
         _imageService = imageService;
+        _validator = validator;
     }
 
     [HttpPost]
     [Route("user")]
     public async Task<IActionResult> Post(IFormFile image)
     {
-        if (!image.ValidateFile())
+        var validationResult = await _validator.ValidateAsync(image);
+        
+        if (!validationResult.IsValid)
         {
-            return ValidationProblem("File has wrong extension or too big.");
+            return BadRequest(validationResult.ToDictionary());
         }
 
         var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -49,9 +55,11 @@ public class ImageController : ControllerBase
     [Route("book/{bookId:int}")]
     public async Task<IActionResult> Post(IFormFile image, int bookId)
     {
-        if (!image.ValidateFile())
+        var validationResult = await _validator.ValidateAsync(image);
+        
+        if (!validationResult.IsValid)
         {
-            return ValidationProblem("File has wrong extension or too big.");
+            return BadRequest(validationResult.ToDictionary());
         }
         
         await _imageService.AddImageToBook(image, bookId);

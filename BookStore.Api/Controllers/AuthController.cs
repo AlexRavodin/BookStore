@@ -46,11 +46,6 @@ public class AuthController : ControllerBase
     [Route("register")]
     public async Task<IActionResult> Register(RegisterRequest registerRequest)
     {
-        if (registerRequest.Password != registerRequest.ConfirmPassword)
-        {
-            return BadRequest("Password and confirm password are not same.");
-        }
-
         var user = new IdentityUser
         {
             UserName = registerRequest.Username,

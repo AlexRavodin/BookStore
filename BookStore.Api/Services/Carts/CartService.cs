@@ -4,6 +4,7 @@ using BookStore.Api.Models.Carts.Entity;
 using BookStore.Api.Models.Carts.Request;
 using BookStore.Api.Models.Carts.Response;
 using Microsoft.EntityFrameworkCore;
+using CartItem = BookStore.Api.Models.Carts.Response.CartItem;
 
 namespace BookStore.Api.Services.Carts;
 
@@ -32,7 +33,7 @@ public class CartService : ICartService
         }
 
         var cartItems = await _context.CartItems.Where(ci => ci.CartId == cart.Id).Include(ci => ci.Book).Select(ci =>
-            new CartItemDto(
+            new CartItem(
                 ci.BookId, ci.Book.Name, ci.Book.Price, ci.Count)).ToListAsync();
 
         return new CartDetails(cart.Id, userId, cartItems);
@@ -59,7 +60,7 @@ public class CartService : ICartService
             return cart.Id;
         }
 
-        _context.CartItems.Add(new CartItem
+        _context.CartItems.Add(new Models.Carts.Entity.CartItem
         {
             Count = 1,
             BookId = addToCartRequest.BookId,
@@ -101,7 +102,7 @@ public class CartService : ICartService
         await _context.SaveChangesAsync();
         
         var cartItems = await _context.CartItems.Where(ci => ci.CartId == cart.Id).Include(ci => ci.Book).Select(ci =>
-            new CartItemDto(
+            new CartItem(
                 ci.BookId, ci.Book.Name, ci.Book.Price, ci.Count)).ToListAsync();
 
         return new CartDetails(cart.Id, cart.UserId, cartItems);

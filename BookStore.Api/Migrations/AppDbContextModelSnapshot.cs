@@ -230,9 +230,6 @@ namespace BookStore.Api.Migrations
                     b.Property<Guid?>("BookImageId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("GenreId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -256,7 +253,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 1,
-                            GenreId = 0,
                             Name = "War and Peace",
                             Price = 150.0m,
                             QualityDescription = "Excellent",
@@ -265,7 +261,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 2,
-                            GenreId = 0,
                             Name = "Anna Karenina",
                             Price = 120.0m,
                             QualityDescription = "Very Good",
@@ -274,8 +269,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 3,
-                            BookImageId = new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"),
-                            GenreId = 0,
                             Name = "The Master and Margarita",
                             Price = 130.0m,
                             QualityDescription = "Good",
@@ -284,7 +277,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 4,
-                            GenreId = 0,
                             Name = "Pride and Prejudice",
                             Price = 140.0m,
                             QualityDescription = "Excellent",
@@ -293,7 +285,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 5,
-                            GenreId = 0,
                             Name = "Crime and Punishment",
                             Price = 110.0m,
                             QualityDescription = "Very Good",
@@ -302,7 +293,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 6,
-                            GenreId = 0,
                             Name = "The Lord of the Rings",
                             Price = 160.0m,
                             QualityDescription = "Good",
@@ -311,7 +301,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 7,
-                            GenreId = 0,
                             Name = "The Count of Monte Cristo",
                             Price = 130.0m,
                             QualityDescription = "Excellent",
@@ -320,7 +309,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 8,
-                            GenreId = 0,
                             Name = "The Picture of Dorian Gray",
                             Price = 120.0m,
                             QualityDescription = "Very Good",
@@ -329,7 +317,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 9,
-                            GenreId = 0,
                             Name = "The Hobbit",
                             Price = 150.0m,
                             QualityDescription = "Good",
@@ -338,7 +325,6 @@ namespace BookStore.Api.Migrations
                         new
                         {
                             Id = 10,
-                            GenreId = 0,
                             Name = "Wuthering Heights",
                             Price = 140.0m,
                             QualityDescription = "Excellent",
@@ -454,14 +440,6 @@ namespace BookStore.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("BookImages");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"),
-                            BookId = 3,
-                            Extension = ".webp"
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Api.Models.Images.Entity.UserImage", b =>

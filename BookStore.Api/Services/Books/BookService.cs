@@ -14,12 +14,9 @@ public class BookService : IBookService
 
     private readonly IGenreRepository _genreRepository;
 
-    private readonly IImageService _imageService;
-
     public BookService(IBookRepository bookRepository, IImageService imageService, IGenreRepository genreRepository)
     {
         _bookRepository = bookRepository;
-        _imageService = imageService;
         _genreRepository = genreRepository;
     }
 

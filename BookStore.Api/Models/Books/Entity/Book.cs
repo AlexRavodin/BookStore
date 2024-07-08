@@ -16,8 +16,6 @@ public class Book
     
     public string QualityDescription { get; set; }
     
-    public int GenreId { get; set; }
-    
     public ICollection<Genre> Genres { get; set; }
     
     public ICollection<Author> Authors { get; set; }

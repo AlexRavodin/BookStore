@@ -10,6 +10,7 @@ public static class SpaExtension
         
         app.UseMiddleware<RequestContextLoggingMiddleware>();
 
+        //TODO set for production
         //app.UseCors(Constants.CorsPolicy);
         app.UseStaticFiles();
         app.UseExceptionHandler("/error");
@@ -18,6 +19,7 @@ public static class SpaExtension
         app.UseAuthentication();
         app.UseAuthorization();
 
+        //TODO check how it works
         app.UseEndpoints(_ => { });
         app.MapDefaultControllerRoute();
 

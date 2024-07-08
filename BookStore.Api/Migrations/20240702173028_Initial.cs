@@ -77,7 +77,6 @@ namespace BookStore.Api.Migrations
                     Summary = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
                     QualityDescription = table.Column<string>(type: "text", nullable: false),
-                    GenreId = table.Column<int>(type: "integer", nullable: false),
                     BookImageId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
@@ -339,19 +338,19 @@ namespace BookStore.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "BookImageId", "GenreId", "Name", "Price", "QualityDescription", "Summary" },
+                columns: new[] { "Id", "BookImageId", "Name", "Price", "QualityDescription", "Summary" },
                 values: new object[,]
                 {
-                    { 1, null, 0, "War and Peace", 150.0m, "Excellent", "A historical novel that chronicles the tumultuous events in Russia during the Napoleonic Wars." },
-                    { 2, null, 0, "Anna Karenina", 120.0m, "Very Good", "A tragic story of love and infidelity in imperial Russia." },
-                    { 3, new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"), 0, "The Master and Margarita", 130.0m, "Good", "A fantastical story set in Soviet Russia that explores themes of good and evil." },
-                    { 4, null, 0, "Pride and Prejudice", 140.0m, "Excellent", "A romantic novel that explores the complexities of relationships in 19th-century England." },
-                    { 5, null, 0, "Crime and Punishment", 110.0m, "Very Good", "A psychological novel that delves into the mind of a young man who commits a heinous crime." },
-                    { 6, null, 0, "The Lord of the Rings", 160.0m, "Good", "A high fantasy novel that follows the quest to destroy the One Ring." },
-                    { 7, null, 0, "The Count of Monte Cristo", 130.0m, "Excellent", "An adventure novel that follows the story of betrayal, revenge, and redemption." },
-                    { 8, null, 0, "The Picture of Dorian Gray", 120.0m, "Very Good", "A philosophical novel that explores the themes of beauty, morality, and the supernatural." },
-                    { 9, null, 0, "The Hobbit", 150.0m, "Good", "A fantasy novel that follows the journey of Bilbo Baggins to reclaim the Lonely Mountain." },
-                    { 10, null, 0, "Wuthering Heights", 140.0m, "Excellent", "A romantic novel that explores the complex and often destructive nature of love." }
+                    { 1, null, "War and Peace", 150.0m, "Excellent", "A historical novel that chronicles the tumultuous events in Russia during the Napoleonic Wars." },
+                    { 2, null, "Anna Karenina", 120.0m, "Very Good", "A tragic story of love and infidelity in imperial Russia." },
+                    { 3, null, "The Master and Margarita", 130.0m, "Good", "A fantastical story set in Soviet Russia that explores themes of good and evil." },
+                    { 4, null, "Pride and Prejudice", 140.0m, "Excellent", "A romantic novel that explores the complexities of relationships in 19th-century England." },
+                    { 5, null, "Crime and Punishment", 110.0m, "Very Good", "A psychological novel that delves into the mind of a young man who commits a heinous crime." },
+                    { 6, null, "The Lord of the Rings", 160.0m, "Good", "A high fantasy novel that follows the quest to destroy the One Ring." },
+                    { 7, null, "The Count of Monte Cristo", 130.0m, "Excellent", "An adventure novel that follows the story of betrayal, revenge, and redemption." },
+                    { 8, null, "The Picture of Dorian Gray", 120.0m, "Very Good", "A philosophical novel that explores the themes of beauty, morality, and the supernatural." },
+                    { 9, null, "The Hobbit", 150.0m, "Good", "A fantasy novel that follows the journey of Bilbo Baggins to reclaim the Lonely Mountain." },
+                    { 10, null, "Wuthering Heights", 140.0m, "Excellent", "A romantic novel that explores the complex and often destructive nature of love." }
                 });
 
             migrationBuilder.InsertData(
@@ -400,11 +399,6 @@ namespace BookStore.Api.Migrations
                     { 9, 3 },
                     { 10, 4 }
                 });
-
-            migrationBuilder.InsertData(
-                table: "BookImages",
-                columns: new[] { "Id", "BookId", "Extension" },
-                values: new object[] { new Guid("0f8fad5b-d9cb-469f-a165-70867728950e"), 3, ".webp" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

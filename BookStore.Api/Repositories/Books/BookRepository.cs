@@ -34,6 +34,8 @@ public class BookRepository : IBookRepository
     
     public async Task<Book> GetById(int id)
     {
+        //TODO: check performance        
+        
         var book = await _context.Books
             .Include(b => b.BookImage)
             .Include(b => b.Genres)
@@ -48,7 +50,7 @@ public class BookRepository : IBookRepository
         return book;
     }
     
-    public async Task<int> Add(Book book)
+    public async Task<Book> Add(Book book)
     {
         var result = _context.Books.Add(book);
 
@@ -61,10 +63,10 @@ public class BookRepository : IBookRepository
             throw new DataException();
         }
         
-        return result.Entity.Id;
+        return result.Entity;
     }
 
-    public async Task<int> Update(Book book)
+    public async Task<Book> Update(Book book)
     {
         _context.Books.Update(book);
 
@@ -77,7 +79,7 @@ public class BookRepository : IBookRepository
             throw new DataException();
         }
         
-        return book.Id;
+        return book;
     }
 
     public async Task Delete(int id)

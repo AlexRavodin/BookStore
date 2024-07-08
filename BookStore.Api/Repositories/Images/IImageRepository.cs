@@ -6,9 +6,9 @@ public interface IImageRepository
 {
     public Task<UserImage> AddUserImage(UserImage userImage);
     
-    public Task<bool> RemoveUserImage(Guid id);
-    
     public Task<BookImage> AddBookImage(BookImage bookImage);
+    
+    public Task<bool> RemoveUserImage(Guid id);
     
     public Task<bool> RemoveBookImage(Guid id);
 

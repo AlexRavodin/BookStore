@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(c => c.UseNpgsql(
 builder.Host.UseSerilog((context, loggerConfig) =>
     loggerConfig.ReadFrom.Configuration(context.Configuration));
 
+//TODO set for production
 //builder.AddCors();
 builder.AddCustomIdentity();
 builder.AddCustomPolices();
@@ -33,7 +34,8 @@ builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 
 builder.Services.AddControllers();
-builder.Services.AddHttpContextAccessor();
+//TODO check if needed
+//builder.Services.AddHttpContextAccessor();
 
 var app = builder.BuildWithSpa();
 app.SeedDefaultUsers();

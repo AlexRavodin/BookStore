@@ -1,5 +1,90 @@
 ﻿POST http://localhost:5103/api/test
 Content-Type: application/json
+Content-Length: 72
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "123",
+  "password" : "",
+  "confirmPassword" : "1234"
+}
+
+<> 2024-07-02T134933.400.json
+
+###
+
+POST http://localhost:5103/api/test
+Content-Type: application/json
+Content-Length: 73
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "123",
+  "password" : "0",
+  "confirmPassword" : "1234"
+}
+
+<> 2024-07-02T134926.400.json
+
+###
+
+POST http://localhost:5103/api/test
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "123",
+  "password" : "123",
+  "confirmPassword" : ""
+}
+
+<> 2024-07-02T134916.400.json
+
+###
+
+POST http://localhost:5103/api/test
+Content-Type: application/json
+Content-Length: 75
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "123",
+  "password" : "123",
+  "confirmPassword" : "1234"
+}
+
+<> 2024-07-02T134902.400.json
+
+###
+
+POST http://localhost:5103/api/test
+Content-Type: application/json
+Content-Length: 75
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "123",
+  "password" : "123",
+  "confirmPassword" : "1234"
+}
+
+<> 2024-07-02T134756.400.json
+
+###
+
+POST http://localhost:5103/api/test
+Content-Type: application/json
 Content-Length: 103
 User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.2
 Accept-Encoding: br, deflate, gzip, x-gzip

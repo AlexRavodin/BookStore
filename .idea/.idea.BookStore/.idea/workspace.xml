@@ -9,98 +9,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7547c8b6-71e4-4ce2-880c-64a97e62797b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/ImageController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/TestController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Exceptions/FileDeleteException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Exceptions/FileSaveException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Extensions/ValidationExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Helpers/IAssemblyMarker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Models/Books/Request/CreateBookRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Models/Genres/Response/GenreListItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Models/Images/Entity/BookImage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Models/Images/Entity/UserImage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Models/Users/Request/UpdateUserRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Models/Users/Response/AdminUserDetails.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Genres/GenreRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Genres/IGenreRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Images/IImageRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Images/ImageRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Requests/UpdateBookRequest.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Services/Images/IImageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Services/Images/ImageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Auth/LoginRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Auth/RegisterRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Books/CreateBookRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Books/UpdateBookRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Image/ImageStaticValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Users/UpdatePasswordRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Users/UpdateRoleRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Users/UpdateUserRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.staticwebassets.runtime.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/FluentValidation.AspNetCore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/FluentValidation.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets/msbuild.BookStore.Api.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/wwwroot/images/books/NoImageAvailable.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/wwwroot/images/books/f73f9c66-203c-4721-8eee-3f9753b5a502.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/wwwroot/images/users/NoImageAvailable.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore.Api/wwwroot/images/users/eca7d1c0-7498-48da-81c5-63fdf9c0592c.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources/05f70847-4100-4afc-ad9a-ef02cdf1c3af.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources/4c715ecb-a9b7-4508-a72f-91df48222f6d.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources/4c715ecb-a9b7-4508-a72f-91df48222f6d/storage_v2/_src_/database/users.CI6mBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources/4c715ecb-a9b7-4508-a72f-91df48222f6d/storage_v2/_src_/database/users.CI6mBg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookStore.Api/Extensions/FluentValidationExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookStore.Api/Requests/RegisterRequest.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Image/ImageFileValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources/b5970fa8-817b-4686-aa9a-06141d7e2b40.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/dataSources/b5970fa8-817b-4686-aa9a-06141d7e2b40.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/BookStore.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/BookStore.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/CartController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Controllers/ImageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/ImageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Controllers/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Controllers/TestController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Extensions/AuthorizationExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Extensions/AuthorizationExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Extensions/DefaultUserSeedingExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Extensions/DefaultUserSeedingExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Extensions/SpaExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Extensions/SpaExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Helpers/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Helpers/Constants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240625120827_AddBookAndUsersTables.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240625120827_AddBookAndUsersTables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Migrations/20240702052226_Initial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240625183744_SeedBooks.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240625183744_SeedBooks.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240625234206_BookDeleted.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240625234206_BookDeleted.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240626073653_AddCart.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Migrations/20240702052226_Initial.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240626073653_AddCart.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Middleware/RequestContextLoggingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Middleware/RequestContextLoggingMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240702052226_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/20240702052226_Initial.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Books/Entity/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Books/Entity/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Books/Entity/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Genres/Entity/Genre.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Books/Response/BookDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Books/Response/BookDetails.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Books/Response/BookListItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Books/Response/BookListItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Entity/Cart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Entity/Cart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Request/UpdateCartItemCountRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Request/UpdateCartItemCountRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Users/Response/UserDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Users/Response/UserDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Response/CartDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Response/CartDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Response/CartItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Models/Carts/Response/CartItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Repositories/Books/BookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Books/BookRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Repositories/Books/IBookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Books/IBookRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Repositories/Images/IImageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Repositories/Images/IImageRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Services/Books/BookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/Services/Carts/CartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Services/Carts/CartService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/Services/Carts/ICartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Services/Carts/ICartService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/TODO.MD" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/TODO.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Validation/Auth/RegisterRequestValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/Validation/Auth/RegisterRequestValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/Validation/Image/ImageStaticValidator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/BookStore.Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/BookStore.Api.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/bin/Debug/net8.0/BookStore.Api.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/BookStore.Api.sourcelink.json" afterDir="false" />
@@ -108,25 +49,13 @@
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/ref/BookStore.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/ref/BookStore.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/refint/BookStore.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/refint/BookStore.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets/msbuild.BookStore.Api.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/Debug/net8.0/staticwebassets/msbuild.BookStore.Api.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Api/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/book/BookDetails/BookDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/book/BookDetails/BookDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/book/BookDetails/BookDetails.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/book/BookDetails/BookDetails.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/book/BookList/BookList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/book/BookList/BookList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/book/BookList/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/book/BookList/BookList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/book/FilterForm/FilterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/book/FilterForm/FilterForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/cart/CartDetails/CartDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/cart/CartDetails/CartDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/common/MainPage/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/common/MainPage/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/common/NavigationBar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/common/NavigationBar/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/user/UserDetails/UserDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/user/UserDetails/UserDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/components/user/UserDetails/UserDetails.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/components/user/UserDetails/UserDetails.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-app/src/providers/AuthProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-app/src/providers/AuthProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/wwwroot/images/books/f73f9c66-203c-4721-8eee-3f9753b5a502.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.Api/wwwroot/images/users/eca7d1c0-7498-48da-81c5-63fdf9c0592c.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +76,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Http/Http/src/HttpServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Middleware/Diagnostics/src/DeveloperExceptionPage/DeveloperExceptionPageMiddlewareImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Middleware/Diagnostics/src/ExceptionHandler/ExceptionHandlerMiddlewareImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Middleware/Spa/SpaServices.Extensions/src/SpaApplicationBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -162,9 +92,17 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Servers/Kestrel/Core/src/Internal/Infrastructure/KestrelConnectionOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/coreclr/System.Private.CoreLib/src/System/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/libraries/System.Linq.Expressions/src/System/Linq/Expressions/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncValueTaskMethodBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncValueTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/libraries/System.Private.CoreLib/src/System/Threading/CancellationTokenRegistration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9b415e10f5ba4a949da6625f698e9c5d26a7c0/d6/5d9d9917/EntityEntry`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17c36446649d75359641d2341f72c87dbc22df8a5759c0b95291df426260/PropertyRule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/503de39f189e313e0dfae7247983c3491ded7bf1293f6de5c8de3862885b/SerilogLoggerScope.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/51a4f462d6eeaacc1d74f4f4f378be1b654df14c1d9cbe88b2434648aee0c946/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7117d42cd57d43d0544e6486a55fb2270dab87faa94ae694f822d226bb3351d/RuleComponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8bb416a5d4877933636ae22013c47cc636987118e78a2cf94d52c71eeaa577/ValidationResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ca1c16b5ac8644a801e26b177183d85410af3d56e7609ce65b5d373686babc/PredicateValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eec252cf40b8ff96a3a028a3eddc6ac8c0d3f385d85e6def3cfc7d63fbc5918e/DefaultValidatorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
@@ -185,32 +123,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.BookStore.Api: http.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.UpdateBookRequest | Post request to test endpoint.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.BookStore.Api: http.executor": "Debug",
+    "HTTP Request.All in RegisterRequest.executor": "Run",
+    "HTTP Request.RegisterRequest | Post request to test endpoint.executor": "Run",
+    "HTTP Request.UpdateBookRequest | Post request to test endpoint.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\alex\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\alex\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\alex\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\alex\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\alex\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\alex\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BookStore.Api: http">
+    <configuration name="All in RegisterRequest" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/BookStore.Api/Requests/RegisterRequest.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="RegisterRequest | Post request to test endpoint" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/BookStore.Api/Requests/RegisterRequest.http" requestIdentifier="Post request to test endpoint" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="UpdateBookRequest | Post request to test endpoint" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/BookStore.Api/Requests/UpdateBookRequest.http" requestIdentifier="Post request to test endpoint" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -246,6 +192,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.RegisterRequest | Post request to test endpoint" />
+        <item itemvalue="HTTP Request.All in RegisterRequest" />
         <item itemvalue="HTTP Request.UpdateBookRequest | Post request to test endpoint" />
       </list>
     </recent_temporary>
@@ -275,7 +223,10 @@
       <workItem from="1719807654408" duration="73000" />
       <workItem from="1719807739154" duration="30000" />
       <workItem from="1719807780460" duration="26307000" />
-      <workItem from="1719889528750" duration="8814000" />
+      <workItem from="1719889528750" duration="8922000" />
+      <workItem from="1719915794304" duration="13250000" />
+      <workItem from="1720044226255" duration="8000" />
+      <workItem from="1720084251525" duration="938000" />
     </task>
     <servers />
   </component>
@@ -283,6 +234,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

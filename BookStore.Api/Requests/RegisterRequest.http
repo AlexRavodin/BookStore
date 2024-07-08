@@ -1,0 +1,13 @@
+﻿### Post request to test endpoint
+POST http://localhost:5103/api/test
+Content-Type: application/json
+
+{
+  "username": "123",
+  "password" : "",
+  "confirmPassword" : "1234"
+}
+
+###
+
+
