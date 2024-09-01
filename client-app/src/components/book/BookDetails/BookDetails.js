@@ -6,7 +6,7 @@ import styles from "./BookDetails.module.scss";
 const BookDetails = () => {
     const params = useParams();
     const id = params.id;
-    const [book, setBook] = useState({});
+    const [book, setBook] = useState({ genres: []});
 
     useEffect(() => {
         axios.get(`http://localhost:5103/api/books/${id}`)
@@ -17,7 +17,7 @@ const BookDetails = () => {
             .catch(error => {
                 console.error(error);
             });
-    }, [id]);
+    }, [book.genres, id]);
 
     useEffect(() => {
         if (book.genres) {

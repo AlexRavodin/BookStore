@@ -2,7 +2,6 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './BookList.css';
-import {string} from "prop-types";
 
 const BookList = ({ books }) => {
     const [loading, setLoading] = useState(false);

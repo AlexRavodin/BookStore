@@ -68,6 +68,11 @@ public class BookService : IBookService
         book.Price = updateBookRequest.Price;
 
         await _bookRepository.Update(book);
+
+        if (updateBookRequest.GenreIds.Count != book.Genres.Count)
+        {
+            await _bookRepository.UpdateGenres(updateBookRequest.Id, updateBookRequest.GenreIds);
+        }
         
         var allGenres = await _genreRepository.Get();
         var genreList = allGenres.Select(g => new GenreListItem(

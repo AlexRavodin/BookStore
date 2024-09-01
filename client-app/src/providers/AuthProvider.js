@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Cookies from 'js-cookie';
 import {AuthContext} from "../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -15,6 +17,7 @@ const AuthProvider = ({children}) => {
         } else {
             console.log("User is not logged in.")
             setUser(null);
+            navigate('/auth/login', { replace: true });
         }
     }, []);
 
@@ -32,15 +35,14 @@ const AuthProvider = ({children}) => {
             console.log("role:");
             console.log(role);
         } catch (error) {
-            console.log("cookie value:" + cookie);
-            //console.error("Error getting role from cookie:", error);
+            console.error("Error getting role from cookie:", error);
+            removeUser();
         }
 
         localStorage.setItem('user', "logged in.");
         localStorage.setItem('claim', response.data["claim"]);
         const loggedUser = { claim : response.data["claim"], isLoggedIn: true };
         setUser(loggedUser);
-        console.log("out of login");
     };
 
     const register = async (username, password, confirmPassword) => {
@@ -58,10 +60,14 @@ const AuthProvider = ({children}) => {
         await axios.get('http://localhost:5103/api/auth/logout',
             {withCredentials: true});
 
+        removeUser();
+    };
+    
+    const removeUser = () => {
         localStorage.removeItem('user');
         localStorage.removeItem('claim');
         setUser(null);
-    };
+    }
 
     return (
         <AuthContext.Provider value={{user, setUser, login, logout, register}}>

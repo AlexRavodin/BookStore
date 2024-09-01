@@ -42,7 +42,7 @@ const ManagerBookDetails = () => {
             Summary: book.summary,
             Price: book.price,
             QualityDescription: book.qualityDescription,
-            Genres: selectedGenres.map(genre => genre.value),
+            GenreIds: selectedGenres.map(genre => genre.value),
         };
         axios.put(`http://localhost:5103/api/books`, updateBookRequest)
             .then(response => {

@@ -1,1 +1,33 @@
-.MainPage {}
+.MainPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.welcomeSection {
+  text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcomeImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.welcomeTitle {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+.welcomeMessage {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}

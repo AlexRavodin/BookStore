@@ -5,12 +5,10 @@
 
 .bookCatalogInnerContainer {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-.filterFormContainer {
-  flex-basis: 30%;
-  justify-content: flex-start;
-}
 
 .bookListContainer {
   flex-basis: 70%;

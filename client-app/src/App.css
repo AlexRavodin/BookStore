@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the entire viewport height is used */
 }
 
 .App-logo {
@@ -35,4 +37,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.MainContent {
+  min-height: calc(80vh - 50px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

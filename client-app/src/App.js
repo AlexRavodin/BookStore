@@ -14,33 +14,39 @@ import CartDetails from "./components/cart/CartDetails/CartDetails";
 import AdminUserDetails from "./components/user/AdminUserDetails/AdminUserDetails";
 import ManagerBookDetails from "./components/book/ManagerBookDetails/ManagerBookDetails";
 import ManagerBookCatalog from "./components/book/ManagerBookCatalog/ManagerBookCatalog";
+import Footer from "./components/common/Footer/Footer";
+
 
 BrowserRouter.propTypes = {children: PropTypes.node};
 
 function App() {
     return (
-        <AuthProvider>
-            <BrowserRouter>
+        <BrowserRouter>
+            <AuthProvider>
                 <NavigationBar/>
-                <Routes>
-                    <Route exact path="/" element={<MainPage/>}/>
+                <div className="MainContent">
+                    <Routes>
+                        <Route exact path="/" element={<MainPage/>}/>
 
-                    <Route path="/auth/login" element={<LoginForm/>}/>
-                    <Route path="/auth/register" element={<RegisterForm/>}/>
+                        <Route path="/auth/login" element={<LoginForm/>}/>
+                        <Route path="/auth/register" element={<RegisterForm/>}/>
 
-                    <Route path="/users" element={<UserCatalog/>}/>
-                    <Route path="/user/:id" element={<AdminUserDetails/>}/>
-                    <Route path="/user" element={<UserDetails/>}/>
+                        <Route path="/users" element={<UserCatalog/>}/>
+                        <Route path="/user/:id" element={<AdminUserDetails/>}/>
+                        <Route path="/user" element={<UserDetails/>}/>
 
-                    <Route path="/books" element={<BookCatalog/>}/>
-                    <Route path="/books/manager" element={<ManagerBookCatalog/>}/>
-                    <Route path="/book/:id" element={<BookDetails/>}/>
-                    <Route path="/book/manager/:id" element={<ManagerBookDetails/>}/>
+                        <Route path="/books" element={<BookCatalog/>}/>
+                        <Route path="/books/manager" element={<ManagerBookCatalog/>}/>
+                        <Route path="/book/:id" element={<BookDetails/>}/>
+                        <Route path="/book/manager/:id" element={<ManagerBookDetails/>}/>
 
-                    <Route path="/cart" element={<CartDetails/>}/>
-                </Routes>
-            </BrowserRouter>
-        </AuthProvider>
+                        <Route path="/cart" element={<CartDetails/>}/>
+                    </Routes>
+                    
+                </div>
+                <Footer/>
+            </AuthProvider>
+        </BrowserRouter>
     );
 }
 

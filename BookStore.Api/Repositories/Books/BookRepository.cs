@@ -69,6 +69,7 @@ public class BookRepository : IBookRepository
     public async Task<Book> Update(Book book)
     {
         _context.Books.Update(book);
+        
 
         try
         {
@@ -79,6 +80,30 @@ public class BookRepository : IBookRepository
             throw new DataException();
         }
         
+        return book;
+    }
+
+    public async Task<Book> UpdateGenres(int bookId, List<int> genreIds)
+    {
+        var book = await _context.Books
+            .Include(b => b.Genres)
+            .FirstOrDefaultAsync(b => b.Id == bookId);
+
+        if (book == null)
+        {
+            throw new InvalidOperationException("Book not found");
+        }
+        
+        book.Genres.Clear();
+        
+        var newGenres = await _context.Genres
+            .Where(g => genreIds.Contains(g.Id))
+            .ToListAsync();
+
+        book.Genres = newGenres;
+
+        await _context.SaveChangesAsync();
+
         return book;
     }
 

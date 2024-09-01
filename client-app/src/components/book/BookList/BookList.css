@@ -2,6 +2,7 @@
     margin: 10px auto 0;
     border-collapse: collapse;
     width: 80%;
+    flex-shrink: 0;
 }
 
 .book-list th, .book-list td {

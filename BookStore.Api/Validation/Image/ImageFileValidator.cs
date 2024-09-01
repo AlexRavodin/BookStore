@@ -12,7 +12,7 @@ public class ImageFileValidator : AbstractValidator<IFormFile>
     {
         RuleFor(f => f.FileName).NotEmpty();
         RuleFor(f => f.FileName).Must(BeValidFileExtension).WithMessage(InvalidExtensionMessage);
-        RuleFor(f => f.Length).LessThan(50_000);    
+        RuleFor(f => f.Length).LessThan(500_000);    
     }
 
     private bool BeValidFileExtension(string fileName)

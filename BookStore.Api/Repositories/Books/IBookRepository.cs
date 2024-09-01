@@ -14,5 +14,7 @@ public interface IBookRepository
     
     public Task<Book> Update(Book book);
 
+    public Task<Book> UpdateGenres(int bookId, List<int> genreIds);
+
     public Task Delete(int id);
 }
