@@ -1,4 +1,4 @@
-﻿namespace BookStore.Api.Models.Books.Entity;
+﻿namespace BookStore.Api.Models.Authors.Entity;
 
 public class Author
 {

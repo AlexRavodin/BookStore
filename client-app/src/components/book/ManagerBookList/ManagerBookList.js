@@ -8,6 +8,7 @@ const ManagerBookList = ({ books }) => {
     const [error, setError] = useState(null);
 
     return (
+
         <table className="book-list">
             <thead>
             <tr>

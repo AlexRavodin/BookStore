@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using BookStore.Api.Data;
 using BookStore.Api.Extensions;
+using BookStore.Api.Repositories.Authors;
 using BookStore.Api.Repositories.Books;
 using BookStore.Api.Repositories.Genres;
 using BookStore.Api.Repositories.Images;
+using BookStore.Api.Services.Authors;
 using BookStore.Api.Services.Books;
 using BookStore.Api.Services.Carts;
 using BookStore.Api.Services.Images;
@@ -25,6 +27,9 @@ builder.AddValidation();
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
+
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 
 builder.Services.AddScoped<ICartService, CartService>();
 

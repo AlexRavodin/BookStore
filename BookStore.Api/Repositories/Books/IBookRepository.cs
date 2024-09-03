@@ -10,7 +10,7 @@ public interface IBookRepository
 
     public Task<Book> GetById(int id);
 
-    public Task<Book> Add(Book book);
+    public Task<Book> Add(Book book, int authorId);
     
     public Task<Book> Update(Book book);
 

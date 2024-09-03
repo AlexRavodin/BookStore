@@ -15,6 +15,7 @@ import AdminUserDetails from "./components/user/AdminUserDetails/AdminUserDetail
 import ManagerBookDetails from "./components/book/ManagerBookDetails/ManagerBookDetails";
 import ManagerBookCatalog from "./components/book/ManagerBookCatalog/ManagerBookCatalog";
 import Footer from "./components/common/Footer/Footer";
+import BookAddForm from "./components/book/BookAddForm/BookAddForm";
 
 
 BrowserRouter.propTypes = {children: PropTypes.node};
@@ -37,6 +38,7 @@ function App() {
 
                         <Route path="/books" element={<BookCatalog/>}/>
                         <Route path="/books/manager" element={<ManagerBookCatalog/>}/>
+                        <Route path="/books/manager/add" element={<BookAddForm/>}/>
                         <Route path="/book/:id" element={<BookDetails/>}/>
                         <Route path="/book/manager/:id" element={<ManagerBookDetails/>}/>
 

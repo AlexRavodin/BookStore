@@ -13,4 +13,6 @@ public interface IBookService
     public Task<BookDetails> UpdateBook(UpdateBookRequest updateBookRequest);
     
     public Task DeleteBook(int id);
+    
+    public Task CreateBook(CreateBookRequest createBookRequest);
 }

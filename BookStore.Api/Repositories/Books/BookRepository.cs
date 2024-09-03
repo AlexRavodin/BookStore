@@ -49,9 +49,20 @@ public class BookRepository : IBookRepository
 
         return book;
     }
-    
-    public async Task<Book> Add(Book book)
+
+    public async Task<Book> Add(Book book, int authorId)
     {
+        var author = await _context.Authors.Where(a => a.Id == authorId).FirstOrDefaultAsync();
+
+        if (author != null)
+        {
+            book.Authors.Add(author);
+        }
+        else
+        {
+            throw new Exception("Author not exists.");
+        }
+
         var result = _context.Books.Add(book);
 
         try

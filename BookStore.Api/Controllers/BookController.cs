@@ -59,6 +59,15 @@ public class BookController : ControllerBase
 
         return Ok(book);
     }
+    
+    [HttpPost]
+    [Authorize(Policy = Constants.Moderator)]
+    public async Task<IActionResult> Create(CreateBookRequest createBookRequest)
+    {
+        await _bookService.CreateBook(createBookRequest);
+
+        return Ok();
+    }
 
     [Route("{id:int}")]
     [HttpDelete]

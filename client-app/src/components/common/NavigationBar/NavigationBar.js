@@ -32,16 +32,25 @@ const NavigationBar = () => {
                             Users
                         </Link>
                     ) : user && user.isLoggedIn && user.claim === "moderator" ?
-                        (<Link to="/books/manager" className={styles.navLink}>
-                        Books
-                    </Link>) : null }
+                        (
+                            <ul><li>
+                                <Link to="/books/manager" className={styles.navLink}>
+                                    Books
+                                </Link>
+                                </li>
+                                <li><Link to="/books/manager/add" className={styles.navLink}>
+                                    Add
+                                </Link>
+                                </li>
+                            </ul>
+                        ) : null}
                 </li>
                 <li>
                     {user && user.isLoggedIn ? (
                         <ul>
                             <li>
                                 <Link to="/user" className={styles.navLink}>
-                                    Profile
+                                Profile
                                 </Link>
                             </li>
                             <li>

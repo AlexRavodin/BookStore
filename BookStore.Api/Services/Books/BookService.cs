@@ -2,6 +2,7 @@
 using BookStore.Api.Models.Books.Request;
 using BookStore.Api.Models.Books.Response;
 using BookStore.Api.Models.Genres.Response;
+using BookStore.Api.Repositories.Authors;
 using BookStore.Api.Repositories.Books;
 using BookStore.Api.Repositories.Genres;
 using BookStore.Api.Services.Images;
@@ -11,13 +12,14 @@ namespace BookStore.Api.Services.Books;
 public class BookService : IBookService
 {
     private readonly IBookRepository _bookRepository;
-
     private readonly IGenreRepository _genreRepository;
+    private readonly IAuthorRepository _authorRepository;
 
-    public BookService(IBookRepository bookRepository, IImageService imageService, IGenreRepository genreRepository)
+    public BookService(IBookRepository bookRepository, IImageService imageService, IGenreRepository genreRepository, IAuthorRepository authorRepository)
     {
         _bookRepository = bookRepository;
         _genreRepository = genreRepository;
+        _authorRepository = authorRepository;
     }
 
     public async Task<PagedList<BookListItem>> GetBooks(BookParameters parameters)
@@ -86,5 +88,20 @@ public class BookService : IBookService
     public async Task DeleteBook(int id)
     {
         await _bookRepository.Delete(id);
+    }
+
+    public async Task CreateBook(CreateBookRequest createBookRequest)
+    {
+        var book = new Book
+        {
+            Name = createBookRequest.Name,
+            Summary = createBookRequest.Summary,
+            Price = createBookRequest.Price,
+            QualityDescription = createBookRequest.QualityDescription,
+            Authors = [],
+            Genres = [],
+        };
+
+        await _bookRepository.Add(book, createBookRequest.AuthorId);
     }
 }

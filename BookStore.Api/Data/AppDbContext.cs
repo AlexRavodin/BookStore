@@ -1,4 +1,5 @@
-﻿using BookStore.Api.Models.Books.Entity;
+﻿using BookStore.Api.Models.Authors.Entity;
+using BookStore.Api.Models.Books.Entity;
 using BookStore.Api.Models.Carts.Entity;
 using BookStore.Api.Models.Genres.Entity;
 using BookStore.Api.Models.Images.Entity;

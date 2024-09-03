@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using BookStore.Api.Models.Authors.Entity;
 using BookStore.Api.Models.Genres.Entity;
 using BookStore.Api.Models.Images.Entity;
 
